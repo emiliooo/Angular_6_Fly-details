@@ -4,6 +4,10 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment.prod';
 import { MaterialModule } from './material/material.module';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { CoreModule } from './core/core.module';
+import { FlightsModule } from './flights/flights.module';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 
 @NgModule({
@@ -11,9 +15,13 @@ import { MaterialModule } from './material/material.module';
     AppComponent
   ],
   imports: [
+    MaterialModule,
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
-    MaterialModule
+    CoreModule,
+    AppRoutingModule,
+    FlightsModule,
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
