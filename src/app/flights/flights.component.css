@@ -1,0 +1,10 @@
+.flights-container {
+  padding-top: 30px;
+}
+
+#new-flight-btn {
+  float: right;
+  font-size: 40px;
+}
+
+
