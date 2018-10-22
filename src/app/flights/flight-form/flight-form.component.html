@@ -1,23 +1,70 @@
-<form >
+<form [formGroup]="form">
   <div class="row">
+    <div class="col-sm-4">
+      <mat-form-field>
+        <input matInput formControlName="code" placeholder="Code">
+      </mat-form-field>
+    </div>
+    <div class="col-sm-4">
+      <mat-form-field>
+        <input matInput formControlName="origin" placeholder="Origin">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <mat-form-field>
+        <input matInput formControlName="destination" placeholder="Destination">
+      </mat-form-field>
+    </div>
+    <div class="col-sm-4">
+      <mat-form-field>
+        <input matInput formControlName="departureTime" placeholder="Departure Time">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <mat-form-field>
+        <input matInput formControlName="returnTime" placeholder="Return Time">
+      </mat-form-field>
+    </div>
     <div class="col-sm-8">
-      <mat-form-field>
-        <input matInput placeholder="Code">
-      </mat-form-field>
+      <textarea matInput formControlName="additionalInformation" placeholder="Additional information"></textarea>
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-4">
-      <mat-form-field>
-        <input matInput placeholder="Origin">
-      </mat-form-field>
+    <div class="col">
+      <mat-checkbox formControlName="withSKPlanesDiscount">With sk discount</mat-checkbox>
     </div>
   </div>
-  <div class="row">git 
-    <div class="col-sm-4">
-      <mat-form-field>
-        <input matInput placeholder="Destination">
-      </mat-form-field>
+  <div class="crew-container shadow" *ngFor="let crewMember of [1,2,3];index as index">
+    <div class="row crew-header">
+      <div class="col">
+        <span>Crew Member - {{ index + 1}} </span>
+        <mat-icon class="float-right"> delete_forever</mat-icon>
+      </div>
+      <div class="row">
+        <div class="col-sm-5">
+          <mat-form-field>
+            <input matInput placeholder="Name">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-4">
+          <mat-form-field>
+            <mat-select placeholder="Job">
+              <mat-option *ngFor="let job of jobs" [value]="job.value">{{ job.label }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="row">
+      <div class="col">
+        <button mat-raised-button color="primary">Add crew member</button>
+      </div>
+    </div>
 </form>
+
+<!-- <pre>{{ form.value  | json }}</pre> -->

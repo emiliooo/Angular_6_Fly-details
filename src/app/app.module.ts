@@ -10,7 +10,6 @@ import { FlightsModule } from './flights/flights.module';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 
-
 @NgModule({
   declarations: [
     AppComponent
