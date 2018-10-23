@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-flight-form',
@@ -20,18 +21,40 @@ export class FlightFormComponent implements OnInit {
 
   ngOnInit() {
     this.buildForm();
+   
+  }
+
+  get crew() {
+    return this.form.get('crew') as FormArray;
+  }
+
+  addCrewMember() {
+    this.crew.push(this.buildCrewMember());
+    console.log(this.form)
+  }
+
+  removeCrewMember(i: number) {
+    this.crew.removeAt(i);
+    console.log(i)
+  }
+
+  buildCrewMember() {
+    return this.formBuilder.group({
+      name: '',
+      job: ''
+    });
   }
 
   private buildForm() {
     this.form = this.formBuilder.group({
-      additionalInformation: '',
-      code: '',
-      departureTime: '',
-      destination: '',
-      origin: '',
-      returnTime: '',
-      withSKPlanesDiscount: false
-      
+      additionalInformation: ['', { validators: [Validators.required] }],
+      code: ['SK', { validators: [Validators.required, Validators.minLength(4), Validators.max(7)] }],
+      departureTime: ['', { validators: [Validators.required] }],
+      destination: ['', { validators: [Validators.required] }],
+      origin: ['', { validators: [Validators.required] }],
+      returnTime: ['', { validators: [Validators.required] }],
+      withSKPlanesDiscount: false,
+      crew: this.formBuilder.array([this.buildCrewMember()])
     });
   }
 
