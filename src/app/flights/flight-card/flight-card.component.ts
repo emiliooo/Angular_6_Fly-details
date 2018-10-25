@@ -11,6 +11,4 @@ export class FlightCardComponent  {
   @Input() flight: Flight;
 
 
-
-
 }
