@@ -6,7 +6,7 @@
         <mat-error *ngIf="form.get('code').hasError('required')">Code is required</mat-error>
         <mat-error *ngIf="form.get('code').hasError('minlength')">Minimum lenghth is 4</mat-error>
         <mat-error *ngIf="form.get('code').hasError('maxlength')">Maximum lenght is 7</mat-error>
-        <mat-hint align="end" >{{  codeInput.value.length}}</mat-hint>
+        <mat-hint align="end">{{ codeInput.value.length}}</mat-hint>
       </mat-form-field>
     </div>
     <div class="col-sm-4">
@@ -34,7 +34,10 @@
       </mat-form-field>
     </div>
     <div class="col-sm-8">
-      <textarea matInput formControlName="additionalInformation" placeholder="Additional information"></textarea>
+      <mat-form-field>
+        <textarea matInput formControlName="additionalInformation" placeholder="Additional information"></textarea>
+      </mat-form-field>
+
     </div>
   </div>
   <div class="row">
@@ -51,7 +54,7 @@
       <div class="row" [formGroupName]="index">
         <div class="col-sm-5">
           <mat-form-field>
-            <input matInput formControlName="name" placeholder="Name"> 
+            <input matInput formControlName="name" placeholder="Name">
           </mat-form-field>
         </div>
         <div class="col-sm-4">

@@ -1,3 +1,16 @@
-<p>
-  login works!
-</p>
+<div class="row justify-content-center ">
+  <div class="col-sm-4 shadow justify-content-center log-content">
+    <img src="" alt="">
+    <h3>login</h3>
+    <mat-form-field class="d-block">
+      <input matInput type="Email" [(ngModel)]="credentials.email" required>
+      <mat-error>Email is require</mat-error>
+    </mat-form-field>
+    <mat-form-field class="d-block">
+        <input matInput type="Password" [(ngModel)]="credentials.password" required>
+        <mat-error>Password is require</mat-error>
+    </mat-form-field>
+    <button mat-button color="primary" (click)="login()">register</button>
+    <button mat-button mat-raised>LOG IN</button>
+  </div>
+</div>

@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { CoreModule } from './core/core.module';
 import { FlightsModule } from './flights/flights.module';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     CoreModule,
     AppRoutingModule,
     FlightsModule,
+    AngularFireAuthModule ,
     AngularFireDatabaseModule
   ],
   providers: [],
