@@ -1,14 +1,15 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component , Input, ChangeDetectionStrategy } from '@angular/core';
 import { Flight } from '../../models/flight.model';
 
 @Component({
   selector: 'app-flight-card',
   templateUrl: './flight-card.component.html',
-  styleUrls: ['./flight-card.component.css']
+  styleUrls: ['./flight-card.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FlightCardComponent  {
 
   @Input() flight: Flight;
 
-
+  
 }

@@ -1,16 +1,23 @@
 <div class="row justify-content-center ">
   <div class="col-sm-4 shadow justify-content-center log-content">
-    <img src="" alt="">
-    <h3>login</h3>
+    <img class="justify-content-center" src="../../../assets/images/logo_sk.png" alt="">
+    <h3>Login or Register</h3>
     <mat-form-field class="d-block">
-      <input matInput type="Email" [(ngModel)]="credentials.email" required>
+      <input matInput type="Email" placeholder="Email"  [(ngModel)]="credentials.email" required>
       <mat-error>Email is require</mat-error>
     </mat-form-field>
     <mat-form-field class="d-block">
-        <input matInput type="Password" [(ngModel)]="credentials.password" required>
+        <input matInput type="Password" placeholder="Password" [(ngModel)]="credentials.password" required>
         <mat-error>Password is require</mat-error>
     </mat-form-field>
-    <button mat-button color="primary" (click)="login()">register</button>
-    <button mat-button mat-raised>LOG IN</button>
+    <button mat-raised-button color="primary" (click)="login()">LOG IN</button>
   </div>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-sm-4 log-content shadow">
+      <p>You don't have account ?</p>
+     <button mat-raised-button  (click)="register()">register</button>
+  </div>
+ 
 </div>

@@ -9,12 +9,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailsComponent } from './details/details.component';
 import { EditFlightComponent } from './edit-flight/edit-flight.component';
 
+
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule
+
   ],
   entryComponents: [NewFlightComponent, DetailsComponent],     ////////  komponent dynamiczny
   declarations: [FlightsComponent, FlightCardComponent, NewFlightComponent, FlightFormComponent, DetailsComponent, EditFlightComponent],

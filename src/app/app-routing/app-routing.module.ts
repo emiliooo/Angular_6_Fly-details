@@ -4,6 +4,8 @@ import { LoginComponent } from '../core/login/login.component';
 import { DashboardComponent } from '../core/dashboard/dashboard.component';
 import { FlightsComponent } from '../flights/flights.component';
 import { EditFlightComponent } from '../flights/edit-flight/edit-flight.component';
+import { PageNotFoundComponent } from '../core/page-not-found/page-not-found.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -16,7 +18,8 @@ const routes: Routes = [
       { path: 'flights', component: FlightsComponent },
       { path: 'flights/:key', component: EditFlightComponent },
     ]
-  }
+  },
+  { path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({

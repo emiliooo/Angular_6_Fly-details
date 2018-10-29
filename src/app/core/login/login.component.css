@@ -1,3 +1,15 @@
 .log-content{
     background-color: white;
 }
+h3{
+    text-align: center;
+}
+img{
+    padding: 30px;
+    cursor: pointer;
+    margin: 0 auto;
+    display: flex;
+}
+button{
+    margin: 20px;
+}
